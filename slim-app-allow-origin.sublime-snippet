@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+/*
+* Refeferencia: https://www.slimframework.com/docs/concepts/middleware.html
+* Obs.: Nesse comando define todos os acessos liberados no header do PHP não ter erro de acesso de origem dos navegadores.*/
+\$app->add(function (\$req, \$res, \$next) {
+    \$response = \$next(\$req, \$res);
+    return \$response
+            ->withHeader('Access-Control-Allow-Origin', '*')
+            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+});
+]]></content>
+	<tabTrigger>s-app-Allow-Origin</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

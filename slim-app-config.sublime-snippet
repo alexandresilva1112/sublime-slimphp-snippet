@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+/*Referencia: https://www.slimframework.com/docs/objects/application.html#application-configuration*/
+\$config =[
+	'settings' => [
+		'dislpayErrorDetails' => true,
+	]
+]
+]]></content>
+	<tabTrigger>s-app-config</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

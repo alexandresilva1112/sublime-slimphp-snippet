@@ -1,0 +1,50 @@
+<snippet>
+	<content><![CDATA[
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
+
+require('${1:pathautoload}');
+
+/*
+* Inserir nesse espaço configurações, autoloads ou demais dependencias.
+*/
+
+\$app = new Slim\app(${2:config});
+
+\$app->get('${3:urlapi}',function(Request \$req, Response \$res, \$args) use (\$app) {
+	/*implment code here*/
+	\$itens = \$req->getParams();
+	\$retorno = null;
+
+	\$res->write(json_encode(\$retorno));
+});
+
+\$app->post('',function(Request \$req, Response \$res, \$args) use (\$app) {
+	/*implment code here*/
+	\$itens = \$req->getParams();
+	\$retorno = null;
+
+	\$res->write(json_encode(\$retorno));
+});
+
+\$app->put('',function(Request \$req, Response \$res, \$args) use (\$app) {
+	/*implment code here*/
+	\$itens = \$req->getParams();
+	\$retorno = null;
+
+	\$res->write(json_encode(\$retorno));
+});
+
+\$app->delete('',function(Request \$req, Response \$res, \$args) use (\$app) {
+	/*implment code here*/
+	\$itens = \$req->getParams();
+	\$retorno = null;
+
+	\$res->write(json_encode(\$retorno));
+});
+
+\$app->run();
+]]></content>
+	<tabTrigger>s-app</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

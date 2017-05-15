@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+\$app->post('${1:apiurl}',function(Request \$req, Response \$res, \$args) use (\$app) {
+	/*implment code here*/
+	\$itens = \$req->getParams();
+	\$retorno = null;
+	${2:codehere}
+	\$res->write(json_encode(\$retorno));
+});
+]]></content>
+	<tabTrigger>s-app-post</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

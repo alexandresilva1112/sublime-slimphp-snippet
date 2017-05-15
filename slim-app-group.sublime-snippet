@@ -1,0 +1,40 @@
+<snippet>
+	<content><![CDATA[
+\$app->group('${1:urlapi}',function() use(\$app){
+
+	\$app->get('${2:urlapi}',function(Request \$req, Response \$res, \$args) use (\$app) {
+		/*implment code here*/
+		\$itens = \$req->getParams();
+		\$retorno = null;
+
+		\$res->write(json_encode(\$retorno));
+	});
+
+	\$app->post('',function(Request \$req, Response \$res, \$args) use (\$app) {
+		/*implment code here*/
+		\$itens = \$req->getParams();
+		\$retorno = null;
+
+		\$res->write(json_encode(\$retorno));
+	});
+
+	\$app->put('',function(Request \$req, Response \$res, \$args) use (\$app) {
+		/*implment code here*/
+		\$itens = \$req->getParams();
+		\$retorno = null;
+
+		\$res->write(json_encode(\$retorno));
+	});
+
+	\$app->delete('',function(Request \$req, Response \$res, \$args) use (\$app) {
+		/*implment code here*/
+		\$itens = \$req->getParams();
+		\$retorno = null;
+
+		\$res->write(json_encode(\$retorno));
+	});
+});
+]]></content>
+	<tabTrigger>s-app-group</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
+
+]]></content>
+	<tabTrigger>s-app-headers</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

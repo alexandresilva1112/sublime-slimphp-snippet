@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+/*
+* Referencia: https://www.slimframework.com/docs/tutorial/first-app.html#set-up-autoloading-for-your-own-classes
+* Obs.: Esse trecho deve ser usado logo após o require('autoload.php') do slim. 
+* 		Tudo que estiver dentro dessa pasta que for class será carregado automaticamente.
+*/
+spl_autoload_register(function (\$classname) {
+    require ("${0:filepathclass}" . \$classname . ".php");
+});
+]]></content>
+	<tabTrigger>s-app-autoload</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

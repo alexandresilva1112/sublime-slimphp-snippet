@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+function(Request \$req, Response \$res, \$args) use (\$app){
+	/*implment code here*/
+	\$itens = \$req->getParams();
+	\$retorno = null;
+	${0:}
+	\$res->write(json_encode(\$retorno));
+}
+]]></content>
+	<tabTrigger>s-app-function</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

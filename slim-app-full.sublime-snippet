@@ -1,0 +1,73 @@
+<snippet>
+	<content><![CDATA[
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
+
+require('${1:pathautoload}/autoload.php');
+/*
+* Referencia: https://www.slimframework.com/docs/tutorial/first-app.html#set-up-autoloading-for-your-own-classes
+* Obs.: Tudo que estiver dentro dessa pasta que for class será carregado automaticamente.
+*/
+spl_autoload_register(function (\$classname) {
+    require ("${2:filepathclass}" . \$classname . ".php");
+});
+/*Referencia: https://www.slimframework.com/docs/objects/application.html#application-configuration*/
+\$config =[
+	'settings' => [
+		'dislpayErrorDetails' => true,
+	]
+];
+
+\$app = new Slim\app(\$config);
+
+/*
+* Refeferencia: https://www.slimframework.com/docs/concepts/middleware.html
+* Obs.: Nesse comando define todos os acessos liberados no header do PHP não ter erro de acesso de origem dos navegadores.*/
+\$app->add(function (\$req, \$res, \$next) {
+    \$response = \$next(\$req, \$res);
+    return \$response
+            ->withHeader('Access-Control-Allow-Origin', '*')
+            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+});
+
+\$app->group('${3:urlapi}',function() use(\$app){
+
+	\$app->get('${4:urlapi}',function(Request \$req, Response \$res, \$args) use (\$app) {
+		/*implment code here*/
+		\$itens = \$req->getParams();
+		\$retorno = null;
+
+		\$res->write(json_encode(\$retorno));
+	});
+
+	\$app->post('',function(Request \$req, Response \$res, \$args) use (\$app) {
+		/*implment code here*/
+		\$itens = \$req->getParams();
+		\$retorno = null;
+
+		\$res->write(json_encode(\$retorno));
+	});
+
+	\$app->put('',function(Request \$req, Response \$res, \$args) use (\$app) {
+		/*implment code here*/
+		\$itens = \$req->getParams();
+		\$retorno = null;
+
+		\$res->write(json_encode(\$retorno));
+	});
+
+	\$app->delete('',function(Request \$req, Response \$res, \$args) use (\$app) {
+		/*implment code here*/
+		\$itens = \$req->getParams();
+		\$retorno = null;
+
+		\$res->write(json_encode(\$retorno));
+	});
+});
+
+\$app->run();
+]]></content>
+	<tabTrigger>s-app-full</tabTrigger>
+	<scope>source.php</scope>
+</snippet>
